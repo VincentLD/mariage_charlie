@@ -1,0 +1,8 @@
+*{
+  transition : all 1s;
+}
+
+body{
+  background :black;
+  color:red;
+}
