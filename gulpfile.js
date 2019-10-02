@@ -5,14 +5,11 @@ const htmlmin = require('gulp-htmlmin');
 const minifyCss = require('gulp-clean-css');
 const plumber = require('gulp-plumber');
 const imagemin = require('gulp-imagemin');
-// const sass = require('gulp-sass');
-// const postcss = require('gulp-postcss');
 const autoprefixer = require('gulp-autoprefixer');
-// const cssnano = require('cssnano');
-// sass.compiler = require('node-sass');
 const browsersync = require('browser-sync').create();
 
-const distFolder = './dist';
+const distFolder = './dist/';
+const srcFolder = './src/';
 
 const paths = {
   css: {
@@ -29,12 +26,14 @@ const paths = {
   },
 };
 
-// test
-/* function test(done) {
-  console.log('un premier test qui ne sert à rien');
-  done();
-} */
-
+function browserSyncDev() {
+  browsersync.init({
+    server: {
+      baseDir: srcFolder,
+    },
+    port: 3000,
+  });
+}
 
 function browserSync() {
   browsersync.init({
@@ -95,13 +94,18 @@ function watchFiles() {
   gulp.watch(paths.img.src, images);
 }
 
-const build = gulp.series(clear, html, css, images);
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+function watch() {
+  gulp.watch([paths.css.src, paths.html.src]).on('change', browsersync.reload);
+}
+
+const serie = gulp.series(clear, html, css, images);
+const build = gulp.series(serie, gulp.parallel(watchFiles, browserSync));
+
+const dev = gulp.parallel(watch, browserSyncDev);
 
 
 // exports
 exports.clear = clear;
-exports.default = watch;
-
-
-
+exports.build = build;
+exports.dev = dev;
+exports.default = dev;
