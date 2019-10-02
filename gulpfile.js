@@ -66,9 +66,7 @@ function css() {
     gulp
       .src(paths.css.src, { since: gulp.lastRun(css) })
       .pipe(plumber())
-      .pipe(autoprefixer({
-        browsers: ['last 3 versions'],
-      }))
+      .pipe(autoprefixer())
       .pipe(minifyCss())
       .pipe(gulp.dest(paths.css.dest))
       .pipe(browsersync.stream())
