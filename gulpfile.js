@@ -24,6 +24,10 @@ const paths = {
     src: './src/assets/img/**/*',
     dest: './dist/assets/img/',
   },
+  font: {
+    src: './src/assets/font/**/*',
+    dest: './dist/assets/font/',
+  },
 };
 
 function browserSyncDev() {
@@ -96,7 +100,18 @@ function watch() {
   gulp.watch([paths.css.src, paths.html.src]).on('change', browsersync.reload);
 }
 
-const serie = gulp.series(clear, html, css, images);
+
+function font() {
+  return (
+    gulp
+      .src(paths.font.src, { since: gulp.lastRun(font) })
+      .pipe(plumber())
+      .pipe(gulp.dest(paths.font.dest))
+      .pipe(browsersync.stream())
+  );
+}
+
+const serie = gulp.series(clear, html, css, images, font);
 const build = gulp.series(serie, gulp.parallel(watchFiles, browserSync));
 
 const dev = gulp.parallel(watch, browserSyncDev);
