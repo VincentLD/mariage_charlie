@@ -4,17 +4,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Gulp Starter Kit</title>
+  <title>Mariage E&C</title>
+  <script src="https://kit.fontawesome.com/1bb9241288.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Vidaloka&family=Kurale&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-
-  <!-- Starter-->
-<section class="presentation">
-  <h1>Starter Gulp - LP MIAW</h1>
-  <img src="assets/img/ecole_web.png" alt="ecole du web">
-</section> 
-<!--fin starter-->
+  <header class="header">
+    <img src="./assets/img/bg hero.png" alt="arrière plan fleural" class="header__bg">
+    <h1 class="header__title">
+      <span class="header__title--pink">Émilie</span>
+      <span class="header__title--block">& Charlie</span>
+    </h1>
+    <p class="header__date">17 décembre 2021</p>
+  </header>
+  <section class="content">
+    <p class="content__text">
+      Nous sommes heureux de vous convier à notre Mariage, qui sera célébré le 17 Décembre à la Mairie du 15e arrondissement de Paris.
+      <span class="content__text--block">
+        Nous vous invitons ensuite à nous rejoindre en plein coeur du Marais, pour prolonger les festivités.
+        En effet, après l’annonce du départ prochain de Charlie pour la Californie ensoleillée, nous avons précipité un mariage qui nous l’espérons n’en sera que plus beau!
+      </span>
+      <span class="content__text--block">
+        En raison des mesures Covid actuelles, nous ne pourrons malheureusement pas convier tout le monde à la mairie, qui se réduira donc à la famille proche et aux témoins.
+      </span>
+      <span class="content__text--block">
+        Pour tous les autres, rendez-vous à la sortie de la mairie pour les photos de groupe (si le temps hivernal nous le permet), ou à 18h au cocktail dinatoire.
+      </span>
+      <span class="content__text--block">
+        Avec plein d’amour,
+      </span>
+      <span class="content__text--block content__text--signature">
+        <span class="content__text--pink">
+          E
+        </span>
+        <span class="content__text--grey">
+           & C
+        </span>
+      </span>
+    </p>
+    <div class="content__imageWrapper">
+      <img src="./assets/img/fleur1.png" alt="fleur" class="content__imgBG1">
+      <img src="./assets/img/fleur1.png" alt="fleur" class="content__imgBG2">
+      <img src="./assets/img/emilie_charlie (1).jpeg" alt="Les deux amoureux" class="content__img">
+    </div>
+  </section>
+  <section class="countdown">
+    <h2 class="countdown__title">Countdown Timer</h2>
+    <div class="countdown-wrapper">
+      <div class="countdown__containerDay">
+        <h3 class="countdown__unit day">Day</h3>
+        <h3 class="countdown__unitSub">Day</h3>
+      </div>
+      <div class="countdown__containerDay">
+        <h3 class="countdown__unit hour">Hours</h3>
+        <h3 class="countdown__unitSub">Hours</h3>
+      </div>
+      <div class="countdown__containerDay">
+        <h3 class="countdown__unit minute">Minutes</h3>
+        <h3 class="countdown__unitSub">Minutes</h3>
+      </div>
+      <div class="countdown__containerDay">
+        <h3 class="countdown__unit second">Seconds</h3>
+        <h3 class="countdown__unitSub">Seconds</h3>
+      </div>
+    </div>
+  </section>
+  <section class="schedule">
+    <h2 class="schedule__title">Déroulement des festivités</h2>
+    <div class="card">
+      <div class="card__header">
+        <div class="card__left">
+          <h3 class="card__title">Mairie du XVe</h3>
+          <p class="card__subtitle">17/12/2021 15h00-15h30</p>
+        </div>
+        <div class="card__right">
+          <i class="far fa-bell card__icon"></i>
+        </div>
+      </div>
+      <p class="card__content">
+        La célébration du mariage est malheureusement limitée en terme de places. Nous y convions seulement la famille proche ainsi que les témoins.
+        <span class="card__content--block">
+          Cependant, rejoignez-nous à la sortie pour prendre des photos tous ensemble!
+        </span>
+      </p>
+      <div class="card__footer">
+        <p class="card__address">31 rue Peclet, 75015 Paris</p>
+        <a href="#" class="card__link"><i class="fas fa-map-marker-alt"></i>View map</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <div class="card__left">
+          <h3 class="card__title">Wedding Party</h3>
+          <p class="card__subtitle">05/02/2022 05:00PM - 08:00PM</p>
+        </div>
+        <div class="card__right">
+          <i class="fas fa-glass-cheers card__icon"></i>
+        </div>
+      </div>
+      <p class="card__content">
+        Que serait un mariage sans fête? 
+        <span class="card__content--block">
+          Nous vous proposons de venir trinquer avec nous chez Lorem Ipsum! 
+        </span>
+      </p>
+      <div class="card__footer">
+        <p class="card__address">4 E. Morris Avenue Stratford, CT 06614</p>
+        <a href="#" class="card__link"><i class="fas fa-map-marker-alt"></i>View map</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__header">
+        <div class="card__left">
+          <h3 class="card__title">Wedding Dinner</h3>
+          <p class="card__subtitle">05/02/2022 05:00PM - 08:00PM</p>
+        </div>
+        <div class="card__right">
+          <i class="fas fa-utensils card__icon"></i>
+        </div>
+      </div>
+      <p class="card__content">
+        Parce qu’un mariage ce n’est pas uniquement une robe de mariée ainsi qu’un passage à la mairie, nous vous convions au traditionnel repas qui cloturera cette journée.
+      </p>
+      <div class="card__footer">
+        <p class="card__address">4 E. Morris Avenue Stratford, CT 06614</p>
+        <a href="#" class="card__link"><i class="fas fa-map-marker-alt"></i>View map</a>
+      </div>
+    </div>
+  </section>
+  <div class="cta-wrapper">
+    <a class="CTA" href="#">Répondre à l'appel</a>
+  </div>
+  <footer class="footer">
+    <p class="footer__text">mariage-emilie-charlie.fr &copy; 2021</p>
+  </footer>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

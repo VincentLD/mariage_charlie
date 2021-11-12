@@ -1,0 +1,269 @@
+// COLORS
+
+$black: #2D2D2D;
+$pink: #E49497;
+$light_pink: #FCF7F4;
+$grey: #808080;
+
+// MISCELLANEOUS
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.4rem;           
+}
+  
+a, a:hover, a:visited{                
+    text-decoration: none;
+}
+
+img {
+    max-width:100%;
+    height: auto;
+    vertical-align: middle; 
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Vidaloka', sans-serif;
+}
+
+body {
+    .header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5em;
+        background-color: $light_pink;
+
+        .header__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+        }
+        .header__title {
+            text-align: center;
+            font-size: 4rem;
+            padding-bottom: .2em;
+            .header__title--pink {color: $pink;}
+            .header__title--block {display: block;}
+        }
+        .header__date {
+            font-family: 'Kurale', sans-serif;
+            font-size: 1.6rem;
+            color: $grey;
+        }
+    }
+
+    .content {
+        padding: 0 1.5em;
+        line-height: 20px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2em;
+
+        .content__imageWrapper {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 5em;
+
+            .content__img {
+                border-radius: 50%;
+                border: 10px solid $pink;
+                position: relative;
+                z-index: 10;
+            }
+
+            .content__imgBG1,
+            .content__imgBG2 {
+                position: absolute;
+                width: 50%;
+            }
+            .content__imgBG1 {
+                top: -15%;
+                left: -15%;
+            }
+            .content__imgBG2 {
+                bottom: -15%;
+                right: -15%;
+                transform: rotate(180deg);
+            }
+        }
+
+        .content__text {
+            order: 2;
+
+            .content__text--signature {
+                font-size: 1.9rem;
+            }
+
+            .content__text--block {
+                display: block;
+                margin: .3em 0;
+            }
+            
+            .content__text--pink { color: $pink;}
+            .content__text--grey { color: $grey;}
+        }
+    }
+
+    .countdown {
+        background-color: $light_pink;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2em 0;
+        margin-bottom: 2em;
+
+        .countdown__title {
+            font-size: 3rem;
+            font-family: 'Kurale', sans-serif;
+            color: $pink;
+            margin-bottom: 1em;
+        }
+
+        .countdown-wrapper {
+            display: flex;
+
+            .countdown__containerDay {
+                padding: 0 .5em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .countdown__unit {
+                    font-size: 3.4rem;
+                    font-family: 'Kurale', sans-serif;
+                    margin-bottom: .2em;
+                }
+                .countdown__unitSub {
+                    color: $grey;
+                }
+            }
+        }
+    }
+
+    .schedule {
+        padding: 0 1.5em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .schedule__title {
+            font-size: 2rem;
+            margin-bottom: 1.5em;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(4px);
+            border-radius: 15px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 2em;
+
+            .card__header {
+                background-color: $pink;
+                color: white;
+                border-radius: 15px 15px 0px 0px;
+                padding: 2em 1em;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .card__left {
+                    .card__title {
+                        color: $black;
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                        margin-bottom: .2em;
+                    }                
+                }
+                .card__right {
+                    .fa-bell {
+                        transform: rotate(20deg)
+                    }
+                    .card__icon {
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+            .card__content {
+                padding: 2em 1em;
+                line-height: 20px;
+                position: relative;
+            }
+
+            .card__content::after {
+                content: '';
+                display: block;
+                height: 1px;
+                background-color: $pink;
+                opacity: .3;
+                width: 100%;
+                position: absolute;
+                bottom: -10px;
+                margin: auto;
+            }
+        }
+
+        .card__footer {
+            padding: 2em 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .card__link {
+                padding-top: 1em;
+                color: $grey;
+
+                .fas {
+                    margin-right: .2em;
+                }
+            }
+        }
+    }
+    .cta-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5em;
+
+        .CTA {
+            font-family: 'Kurale', sans-serif;
+            font-size: 1.4em;
+            background-color: $pink;
+            color: white;
+            padding: 1em 2em;
+            border-radius: 20px;
+        }
+    }
+    .footer {
+        background-color: $light_pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .footer__text {
+            padding: 1.5em 0;
+            color: $grey;
+            font-size: 1.3rem;
+        }
+    }
+}
