@@ -56,14 +56,19 @@ body {
         }
         .header__title {
             text-align: center;
-            font-size: 4rem;
+            font-size: clamp(4.5rem, 3.6000rem + 4.5000vw, 9rem);
             padding-bottom: .2em;
+
             .header__title--pink {color: $pink;}
-            .header__title--block {display: block;}
+
+            .header__title--block {
+                display: block; 
+                color: $grey;
+            }
         }
         .header__date {
             font-family: 'Kurale', sans-serif;
-            font-size: 1.6rem;
+            font-size: clamp(1.6rem, 1.4400rem + 0.8000vw, 2.4rem);
             color: $grey;
         }
     }
@@ -73,19 +78,18 @@ body {
         line-height: 20px;
         display: flex;
         flex-direction: column;
-        margin-bottom: 2em;
+        margin: auto auto 4em auto;
+        max-width: 1920px;
 
         .content__imageWrapper {
             position: relative;
-            width: 80%;
-            margin: auto;
-            margin-bottom: 5em;
-
+            width: 50vw;
+            margin: auto auto 5em auto;
+            
             .content__img {
                 border-radius: 50%;
                 border: 10px solid $pink;
                 position: relative;
-                z-index: 10;
             }
 
             .content__imgBG1,
@@ -128,10 +132,10 @@ body {
         align-items: center;
         justify-content: center;
         padding: 2em 0;
-        margin-bottom: 2em;
+        margin-bottom: 4em;
 
         .countdown__title {
-            font-size: 3rem;
+            font-size: clamp(3rem, 2.2000rem + 4.0000vw, 7rem);
             font-family: 'Kurale', sans-serif;
             color: $pink;
             margin-bottom: 1em;
@@ -147,9 +151,10 @@ body {
                 align-items: center;
 
                 .countdown__unit {
-                    font-size: 3.4rem;
+                    font-size: clamp(3.4rem, 2.0800rem + 6.6000vw, 9rem);
                     font-family: 'Kurale', sans-serif;
                     margin-bottom: .2em;
+                    padding: 0 .2em;
                 }
                 .countdown__unitSub {
                     color: $grey;
@@ -165,61 +170,69 @@ body {
         flex-direction: column;
 
         .schedule__title {
-            font-size: 2rem;
-            margin-bottom: 1.5em;
+            font-size: clamp(3rem, 2.2000rem + 4.0000vw, 7rem);
+            margin-bottom: .5em;
+            text-align: center;
         }
-
-        .card {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(4px);
-            border-radius: 15px;
-            font-family: 'Poppins', sans-serif;
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
             margin-bottom: 2em;
-
-            .card__header {
-                background-color: $pink;
-                color: white;
-                border-radius: 15px 15px 0px 0px;
-                padding: 2em 1em;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .card__left {
-                    .card__title {
-                        color: $black;
-                        font-size: 1.8rem;
-                        font-weight: bold;
-                        margin-bottom: .2em;
-                    }                
-                }
-                .card__right {
-                    .fa-bell {
-                        transform: rotate(20deg)
+            .card {
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+                backdrop-filter: blur(4px);
+                border-radius: 15px;
+                font-family: 'Poppin s', sans-serif;
+                margin-bottom: 2em;
+                max-width: 440px;
+    
+                .card__header {
+                    background-color: $pink;
+                    color: white;
+                    border-radius: 15px 15px 0px 0px;
+                    padding: 2em 1em;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+    
+                    .card__left {
+                        .card__title {
+                            color: $black;
+                            font-size: 1.8rem;
+                            font-weight: bold;
+                            margin-bottom: .2em;
+                        }                
                     }
-                    .card__icon {
-                        font-size: 3rem;
+                    .card__right {
+                        .fa-bell {
+                            transform: rotate(20deg)
+                        }
+                        .card__icon {
+                            font-size: 3rem;
+                        }
                     }
                 }
-            }
 
-            .card__content {
-                padding: 2em 1em;
-                line-height: 20px;
-                position: relative;
-            }
-
-            .card__content::after {
-                content: '';
-                display: block;
-                height: 1px;
-                background-color: $pink;
-                opacity: .3;
-                width: 100%;
-                position: absolute;
-                bottom: -10px;
-                margin: auto;
+                .card__content {
+                    padding: 2em 1em;
+                    line-height: 20px;
+                    position: relative;
+                    min-height: 136px;
+                }
+    
+                .card__content::after {
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    background-color: #E49497;
+                    opacity: 0.3;
+                    width: 93%;
+                    position: absolute;
+                    bottom: -10px;
+                }
             }
         }
 
@@ -243,7 +256,7 @@ body {
     .cta-wrapper {
         display: flex;
         justify-content: center;
-        margin-bottom: 1.5em;
+        margin-bottom: 2.5em;
 
         .CTA {
             font-family: 'Kurale', sans-serif;
@@ -264,6 +277,27 @@ body {
             padding: 1.5em 0;
             color: $grey;
             font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+    body {
+        .content {
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 5em;
+
+            .content__text {
+                width: 45%;
+                order: 0;
+            }
+
+            .content__imageWrapper {
+                margin: 0;
+                max-width: 350px;
+            }
         }
     }
 }
