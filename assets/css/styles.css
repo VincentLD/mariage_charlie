@@ -30,6 +30,7 @@ h1, h2 {
 
 body {
   color: #2D2D2D;
+  background-color: #FCF7F4;
 }
 body .header {
   height: 100vh;
@@ -38,7 +39,6 @@ body .header {
   justify-content: center;
   align-items: center;
   margin-bottom: 5em;
-  background-color: #FCF7F4;
 }
 body .header .header__bg {
   position: absolute;
@@ -113,7 +113,7 @@ body .content .content__text .content__text--grey {
   color: #808080;
 }
 body .countdown {
-  background-color: #FCF7F4;
+  background-color: #f7f3f1;
   display: flex;
   flex-direction: column;
   align-items: center;
